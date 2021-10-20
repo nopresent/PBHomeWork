@@ -22,7 +22,7 @@ public class Bingo {
             userInput = scan.nextInt();
 
             if (userInput > 100) {
-                // Игра закончена, бла, бла, бла
+                // Выход
                 System.out.println("Спасибо за игру!");
                 break;
             } else {

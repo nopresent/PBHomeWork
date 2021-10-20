@@ -17,21 +17,45 @@ public class Array {
             arrayList[i] = scan.nextInt();
         }
 
-        System.out.print("Вывести на экран введенный массив:[");
-        for (int i = 0; i < arrayList.length; i++) {
-            elementSum += arrayList[i];
-            if (arrayList[i] > 0) {
+        System.out.print("Вывести на экран введенный массив:");
+        print(arrayList);
+
+        for (int k : arrayList) {
+            elementSum += k;
+            if (k > 0) {
                 positiveElementCount++;
             }
+        }
+        System.out.println("Сумма введеных чисел: " + elementSum);
+        System.out.println("Кол-во положительных чисел: " + positiveElementCount);
+
+        int count = arrayList.length;
+        for (int i = 0; i < count - 1; i++) {
+            for (int j = 0; j < count - i - 1; j++) {
+                if (arrayList[j] > arrayList[j + 1]) {
+                    int temp = arrayList[j];
+                    arrayList[j] = arrayList[j + 1];
+                    arrayList[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.print("Массив отсортирован методом \"Bubble_sort\": ");
+        print(arrayList);
+
+    }
+
+    static void print(int[] arrayList) {
+
+        System.out.print("[");
+        for (int i = 0; i < arrayList.length; i++) {
             System.out.print(arrayList[i]);
             if (i != arrayList.length - 1) System.out.print(",");
         }
         System.out.println("]");
 
-        System.out.println("Сумма введеных чисел: " + elementSum);
-        System.out.println("Кол-во положительных чисел: " + positiveElementCount);
-
-
     }
 
 }
+
+

@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class Bingo {
     public static void main(String[] args) {
 
-        // Записали рандомное число
-        Random randome = new Random();
-        int storeRnd = randome.nextInt(101);
+        int userInput; // То что вводит пользователь
+        int startCount = 0, endCout = 100; // период в котором пользователь отгадывает число
+        int userCountTry = 1; // кол-во попыток юзера
 
-        int userInput, startCount = 0, endCout = 100;
-        int userCountTry = 1;
+        Random randome = new Random();
+        int storeRnd = randome.nextInt(endCout + 1); // Рандомное число
 
         Scanner scan = new Scanner(System.in);
         System.out.println("********\n Bingo! Угадай Мело... Угадай Число от 0 до 100 \n********");
@@ -35,14 +35,14 @@ public class Bingo {
                     if (check(startCount, endCout, storeRnd)) {
                         break;
                     } else {
-                        System.out.println("Загаданное мной число больше " + userInput);
+                        System.out.println("Загаданное мной число больше");
                     }
                 } else {
                     endCout = --userInput;
                     if (check(startCount, endCout, storeRnd)) {
                         break;
                     } else {
-                        System.out.println("Загаданное мной число меньше " + userInput);
+                        System.out.println("Загаданное мной число меньше");
                     }
                 }
 
@@ -51,7 +51,7 @@ public class Bingo {
             userCountTry++;
 
             if (userCountTry > 2) {
-                System.out.println("******** Для выхода укажите любое число больше 100");
+                System.out.println("******** Для выхода введите 911");
             } else {
                 System.out.println("********");
             }

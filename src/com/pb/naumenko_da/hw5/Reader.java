@@ -17,6 +17,13 @@ public class Reader {
         libraryNumber = ++number;
     }
 
+    @Override
+    public String toString() {
+        return "Номер читательского билета: " + libraryNumber + "\n" +
+                fio + " (" + birthday + "), тел: " + phoneNumber + "\n" +
+                faculty + " факультет \n";
+    }
+
     // Часть 1
     public void takeBook(Integer cnt) {
         takeReturnBook("взял", cnt);
@@ -58,7 +65,7 @@ public class Reader {
     }
 
     private void takeReturnBook(String str, String... book) {
-         System.out.print(fio + " " + str + " ");
+        System.out.print(fio + " " + str + " ");
         for (int i = 0; i < book.length; i++) {
             System.out.print(book[i]);
             if (i != book.length - 1) System.out.print(", ");

@@ -31,7 +31,7 @@ public class CapitalLetter {
     static String firstUpperCase(String string) {
         StringBuilder outBody = new StringBuilder();
         for (int i = 0; i < string.length(); i++) {
-            if (string.substring(i, i + 1).matches("[а-яА-Яa-zA-Z]")) {
+            if (string.substring(i, i + 1).matches("[а-яА-Яa-zA-Zі]")) {
                 outBody.append(string.substring(i, i + 1).toUpperCase()).append(string.substring(i + 1));
                 break;
             }

@@ -11,10 +11,12 @@ public class Dog extends Animal{
         this.isGrowl = isGrowl;
     }
 
+    @Override
     public void makeNoise () {
         System.out.println("Гав-гав-гав!");
     }
 
+    @Override
     public void eat () {
         System.out.println("Не трожь "+getFood()+"!");
     }

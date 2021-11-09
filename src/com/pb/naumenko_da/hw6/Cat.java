@@ -11,10 +11,12 @@ public class Cat extends Animal{
         this.isPurr = isPurr;
     }
 
+    @Override
     public void makeNoise () {
         System.out.println("Мяяяяу!");
     }
 
+    @Override
     public void eat () {
         System.out.println("Не трожь "+getFood()+"!");
     }

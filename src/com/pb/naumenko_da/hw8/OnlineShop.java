@@ -23,15 +23,15 @@ public class OnlineShop {
 
             System.out.println("Для доступа к магазину необходимо пройти регистрацию!");
             // Получаем логин
-            System.out.println("Введите логин:");
+            System.out.print("Введите логин: ");
             userLogin = scan.nextLine();
 
             // Получаем пароль
-            System.out.println("Введите пароль:");
+            System.out.print("Введите пароль: ");
             userPass = scan.nextLine();
 
             // Подтверждение пароля
-            System.out.println("Подтвердите пароль:");
+            System.out.print("Подтвердите пароль: ");
             userConfirmPass = scan.nextLine();
 
             // пробуем зарегистрировать пользователя
@@ -39,7 +39,7 @@ public class OnlineShop {
                 auth.signUp(userLogin, userPass, userConfirmPass);
                 nxt = true;
             } catch (WrongLoginException | WrongPasswordException e) {
-                e.printStackTrace();
+                // e.printStackTrace();
             }
 
         }
@@ -54,18 +54,18 @@ public class OnlineShop {
         while (!nxt) {
             System.out.println("Для доступа к магазину необходимо авторизоваться!");
 
-            System.out.println("Введите логин:");
+            System.out.print("Введите логин: ");
             userLogin = scan.nextLine();
 
             // Получаем пароль
-            System.out.println("Введите пароль:");
+            System.out.print("Введите пароль: ");
             userPass = scan.nextLine();
 
             try {
                 auth.signin(userLogin, userPass);
                 nxt = true;
             } catch (WrongLoginException e) {
-                e.printStackTrace();
+                // e.printStackTrace();
             }
 
         }

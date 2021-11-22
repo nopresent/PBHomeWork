@@ -11,7 +11,7 @@ public class MyLogger {
     public static void logInit() {
 
         try {
-            FileHandler fileHandler = new FileHandler("log.txt");
+            FileHandler fileHandler = new FileHandler("log.txt", true);
             fileHandler.setFormatter(new LogFormatter());
             logger.addHandler(fileHandler);
             logger.setUseParentHandlers(false);

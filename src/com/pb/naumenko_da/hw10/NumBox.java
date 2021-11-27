@@ -5,17 +5,15 @@ import java.util.Arrays;
 public class NumBox<T extends Number> {
 
     private final T[] numBox;           // Наш Массив
-    private final int numBoxSize;       // Заказанный размер
     private int currentArraySize;       // Текущий размер
 
 
     public NumBox(int numBoxSize) {
         numBox = (T[]) new Number[numBoxSize];
-        this.numBoxSize = numBoxSize;
     }
 
     public void add(T num) {
-        if ((currentArraySize+1) > numBoxSize) {
+        if ((currentArraySize+1) > numBox.length) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
             numBox[currentArraySize++] = num;

@@ -21,9 +21,9 @@ public class Main {
 
         NumBox numBox1 = new NumBox(10);
 
-        numBox1.add(10.100500);
         numBox1.add(5.7878787);
         numBox1.add(8.00092);
+        numBox1.add(10.100500);
         numBox1.add(6.12);
         numBox1.add(7.11);
 
@@ -34,6 +34,15 @@ public class Main {
         System.out.println("Сумма всех елментов: " + numBox1.sum());
         System.out.println("Максимальный елемент: " + numBox1.max());
 
+        System.out.println("****************************************");
+
+        NumBox numBox2 = new NumBox(2);
+        System.out.println("В случае если массив полон - выбросить исключение.");
+        System.out.println("Создали массив на 2 елемента, пробуем положить в него 3 елемента");
+
+        numBox2.add(1);
+        numBox2.add(2);
+        numBox2.add(3);
 
     }
 }
